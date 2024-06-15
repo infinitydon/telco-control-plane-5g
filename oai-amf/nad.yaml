@@ -18,7 +18,7 @@ apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata: # kpt-merge: amf-example/amf-core-n2
   name: amf-core-n2
-  namespace: amf-example
+  namespace: oai-core
   annotations:
     internal.kpt.dev/upstream-identifier: 'k8s.cni.cncf.io|NetworkAttachmentDefinition|amf-example|amf-core-n2'
 spec:
