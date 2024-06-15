@@ -19,6 +19,8 @@ upstreamLock:
     ref: main
     commit: 21cec687d315790da24b026fc2ac4caa631f009f
 info:
+  readinessGates:
+  - conditionType: config.injection.WorkloadCluster.workload-cluster
   description: ausf blueprint package
 pipeline:
   mutators:
@@ -27,4 +29,9 @@ pipeline:
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configPath: cm-namespace.yaml
   - image: docker.io/nephio/interface-fn:v2.0.0
-status: {}
+status:
+  conditions:
+  - type: config.injection.WorkloadCluster.workload-cluster
+    status: "False"
+    message: no in-cluster resources of type infra.nephio.org/v1alpha1.WorkloadCluster
+    reason: NoResourceSelected
