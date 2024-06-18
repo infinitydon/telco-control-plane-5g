@@ -2,7 +2,7 @@ apiVersion: k8s.cni.cncf.io/v1
 kind: NetworkAttachmentDefinition
 metadata: # kpt-merge: smf-example/smf-core-n4
   name: smf-core-n4
-  namespace: smf-example
+  namespace: oai-core
   annotations:
     internal.kpt.dev/upstream-identifier: 'k8s.cni.cncf.io|NetworkAttachmentDefinition|smf-example|smf-core-n4'
 spec:
